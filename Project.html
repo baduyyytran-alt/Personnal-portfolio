@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="DUY — Creative Projects and Visual Archive.">
+
+    <title>Projects — DUY</title>
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <!-- EXISTING STYLESHEET -->
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- PROJECT PAGE ADDITIONAL CSS -->
+
+    <style>
+
+        /* ========================================
+           PROJECT PAGE — DUY
+        ======================================== */
+
+
+        /* HERO */
+
+        .projects-hero {
+            min-height: 550px;
+
+            padding: 110px 6% 80px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            position: relative;
+
+            background: #000;
+            overflow: hidden;
+        }
+
+        .projects-hero::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    ellipse at 75% 30%,
+                    rgba(255,255,255,.08),
+                    transparent 55%
+                );
+
+            pointer-events: none;
+        }
+
+        .projects-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .projects-hero-top {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: #aaa;
+        }
+
+        .projects-hero h1 {
+            font-size: clamp(75px, 14vw, 145px);
+
+            line-height: .85;
+            letter-spacing: -11px;
+
+            font-weight: 800;
+
+            margin: 80px 0 55px;
+        }
+
+        .projects-hero h1 span {
+            display: block;
+            text-align: right;
+
+            font-family: 'Playfair Display', serif;
+
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .projects-hero-bottom {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            color: #888;
+        }
+
+
+        /* INTRODUCTION */
+
+        .projects-intro {
+            padding: 85px 12%;
+
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+
+            gap: 60px;
+
+            border-top: 1px solid #333;
+        }
+
+        .projects-intro-content h2 {
+            font-size: clamp(28px, 4vw, 43px);
+
+            line-height: 1.25;
+            font-weight: 500;
+
+            letter-spacing: -1.5px;
+
+            max-width: 700px;
+        }
+
+        .projects-intro-content h2 span {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .projects-intro-content p {
+            max-width: 500px;
+
+            margin-top: 25px;
+
+            font-size: 15px;
+            line-height: 1.9;
+
+            color: #888;
+        }
+
+
+        /* FILTER BAR */
+
+        .project-filter-section {
+            padding: 30px 6%;
+
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: #777;
+        }
+
+        .project-filters {
+            display: flex;
+            align-items: center;
+
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .project-filters button {
+            background: transparent;
+            border: none;
+
+            color: #777;
+
+            font-family: 'DM Sans', sans-serif;
+
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            padding: 8px 0;
+
+            transition: .3s ease;
+        }
+
+        .project-filters button:hover,
+        .project-filters button.active {
+            color: #fff;
+        }
+
+        .project-filters button.active {
+            border-bottom: 1px solid #fff;
+        }
+
+
+        /* CATEGORY SECTIONS */
+
+        .project-category {
+            padding: 110px 6%;
+
+            border-bottom: 1px solid #333;
+
+            scroll-margin-top: 30px;
+        }
+
+        .category-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            gap: 30px;
+
+            margin-bottom: 65px;
+        }
+
+        .category-heading h2 {
+            font-size: clamp(48px, 7vw, 85px);
+
+            font-weight: 700;
+
+            letter-spacing: -5px;
+            line-height: .95;
+
+            margin-top: 30px;
+        }
+
+        .category-heading h2 span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .category-heading > p {
+            font-size: 11px;
+
+            line-height: 1.9;
+            letter-spacing: 1px;
+
+            color: #888;
+            text-align: right;
+            text-transform: uppercase;
+        }
+
+
+        /* CATEGORY NUMBER */
+
+        .category-number {
+            color: #777;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+
+        /* PROJECT GRID */
+
+        .project-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            gap: 65px 25px;
+
+            align-items: start;
+        }
+
+        .archive-project {
+            width: 100%;
+            min-width: 0;
+        }
+
+        .archive-project.hidden {
+            display: none;
+        }
+
+
+        /* PROJECT IMAGES */
+
+        .archive-image {
+            position: relative;
+
+            width: 100%;
+            height: 480px;
+
+            overflow: hidden;
+
+            background: #111;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .archive-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+            object-position: center;
+
+            display: block;
+
+            transition: transform .7s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .archive-project:hover .archive-image img {
+            transform: scale(1.035);
+        }
+
+        .archive-image.cover img {
+            object-fit: cover;
+        }
+
+
+        /* IMAGE OVERLAY */
+
+        .archive-image::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background: rgba(0,0,0,0);
+
+            transition: background .4s ease;
+
+            pointer-events: none;
+        }
+
+        .archive-project:hover .archive-image::after {
+            background: rgba(0,0,0,.08);
+        }
+
+
+        /* PROJECT INFORMATION */
+
+        .archive-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+        .archive-info h3 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .archive-info .project-type {
+            font-size: 12px;
+
+            margin-top: 7px;
+
+            color: #888;
+        }
+
+        .archive-info .project-description {
+            max-width: 430px;
+
+            font-size: 13px;
+            line-height: 1.8;
+
+            margin-top: 13px;
+
+            color: #777;
+        }
+
+        .archive-info .project-tools {
+            font-size: 10px;
+
+            margin-top: 12px;
+
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            color: #666;
+        }
+
+        .archive-number {
+            font-size: 12px;
+            color: #777;
+
+            white-space: nowrap;
+        }
+
+
+        /* FEATURED PROJECT */
+
+        .archive-project.featured {
+            grid-column: span 2;
+        }
+
+        .archive-project.featured .archive-image {
+            height: 600px;
+        }
+
+
+        /* PROJECT LINKS */
+
+        .project-link {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            font-size: 11px;
+            letter-spacing: 1.5px;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid #777;
+            padding-bottom: 5px;
+
+            transition: .3s ease;
+        }
+
+        .project-link:hover {
+            color: #888;
+            border-color: #fff;
+        }
+
+
+        /* CATEGORY EMPTY STATE */
+
+        .category-empty {
+            display: none;
+        }
+
+
+        /* BACK TO HOME */
+
+        .back-home {
+            padding: 110px 6%;
+
+            text-align: center;
+
+            background: #080808;
+        }
+
+        .back-home p {
+            font-size: 11px;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: #777;
+
+            margin-bottom: 30px;
+        }
+
+        .back-home h2 {
+            font-size: clamp(45px, 8vw, 95px);
+
+            font-weight: 700;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 40px;
+        }
+
+        .back-home h2 span {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .back-home a {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 17px 35px;
+
+            border: 1px solid #555;
+            border-radius: 50px;
+
+            font-size: 11px;
+            letter-spacing: 2px;
+
+            text-decoration: none;
+
+            transition: .3s ease;
+        }
+
+        .back-home a:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .archive-image {
+                height: 380px;
+            }
+
+            .archive-project.featured .archive-image {
+                height: 450px;
+            }
+
+            .projects-intro {
+                padding: 80px 7%;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .projects-hero {
+                min-height: 480px;
+                padding: 90px 5% 65px;
+            }
+
+            .projects-hero h1 {
+                font-size: clamp(65px, 16vw, 110px);
+                letter-spacing: -6px;
+            }
+
+            .projects-hero-top,
+            .projects-hero-bottom {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            .projects-intro {
+                padding: 75px 7%;
+
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .projects-intro-content h2 {
+                font-size: 30px;
+            }
+
+            .project-filter-section {
+                padding: 25px 5%;
+            }
+
+            .project-filters {
+                gap: 20px;
+            }
+
+            .project-filters button {
+                font-size: 10px;
+            }
+
+            .project-category {
+                padding: 80px 5%;
+            }
+
+            .category-heading {
+                display: block;
+                margin-bottom: 45px;
+            }
+
+            .category-heading h2 {
+                font-size: 58px;
+                letter-spacing: -4px;
+            }
+
+            .category-heading > p {
+                text-align: left;
+                margin-top: 20px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .archive-project.featured {
+                grid-column: span 1;
+            }
+
+            .archive-image {
+                height: 380px;
+            }
+
+            .archive-project.featured .archive-image {
+                height: 380px;
+            }
+
+            .archive-info h3 {
+                font-size: 18px;
+            }
+
+            .back-home {
+                padding: 80px 5%;
+            }
+
+            .back-home h2 {
+                letter-spacing: -3px;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .archive-image {
+                height: 320px;
+            }
+
+            .archive-project.featured .archive-image {
+                height: 320px;
+            }
+
+            .projects-hero h1 {
+                font-size: 65px;
+                letter-spacing: -4px;
+            }
+
+            .category-heading h2 {
+                font-size: 50px;
+            }
+
+            .archive-info h3 {
+                font-size: 16px;
+            }
+
+        }
+
+
+        /* REDUCED MOTION */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">DUY©</a>
+
+        <div class="links">
+
+            <a href="index.html#about">About</a>
+
+            <a href="index.html#work">Work</a>
+
+            <a href="index.html#websites">Web Design</a>
+
+            <a href="index.html#contact">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- HERO SECTION -->
+
+    <section class="projects-hero">
+
+        <div class="projects-hero-content">
+
+            <div class="projects-hero-top">
+
+                <span>Independent Artist</span>
+
+                <span>Creative Archive — 2026</span>
+
+            </div>
+
+
+            <h1>
+
+                Selected
+
+                <span>Projects.</span>
+
+            </h1>
+
+
+            <div class="projects-hero-bottom">
+
+                <span>Visual Design / 3D Art / Creative Work</span>
+
+                <span>Explore ↓</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- INTRODUCTION 
+
+    <section class="projects-intro">
+
+        <div class="section-label">
+
+            01 / THE ARCHIVE
+
+        </div>
+
+
+        <div class="projects-intro-content">
+
+            <h2>
+
+                Ideas, experiments, and things I've created along the way.
+
+                <span>From personal to professional work.</span>
+
+            </h2>
+
+
+            <p>
+
+                This space brings together different parts of my creative journey.
+                From school assignments and personal projects to professional
+                collaborations, each piece represents an opportunity to explore
+                new ideas, experiment with different tools, and express creativity.
+
+            </p>
+
+        </div>
+
+    </section> -->
+
+
+
+    <!-- PROJECT FILTERS -->
+
+    <section class="project-filter-section">
+
+        <span class="filter-label">
+
+            EXPLORE PROJECTS
+
+        </span>
+
+
+        <div class="project-filters">
+
+            <button class="active" data-filter="all">
+
+                All Projects
+
+            </button>
+
+            <button data-filter="school">
+
+                School
+
+            </button>
+
+            <button data-filter="personal">
+
+                Personal
+
+            </button>
+
+            <button data-filter="work">
+
+                Work
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         01 / SCHOOL PROJECTS
+    ======================================== -->
+
+
+    <section class="project-category" id="school">
+
+        <div class="category-heading">
+
+            <div>
+
+                <div class="section-label">
+
+                    01 / ACADEMIC WORK
+
+                </div>
+
+
+                <h2>
+
+                    School <span>Projects.</span>
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                ASSIGNMENTS / EXPERIMENTS<br>
+                CREATIVE EXPLORATION
+
+            </p>
+
+        </div>
+
+
+
+        <div class="project-grid">
+
+
+            <!-- SCHOOL PROJECT 01 -->
+
+            <article class="archive-project" data-category="school">
+
+                <div class="archive-image">
+
+                    <img
+                        src="image/12.png"
+                        alt="School campaign poster design"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="archive-info">
+
+                    <div>
+
+                        <h3>Campaign Poster Design</h3>
+
+                        <p class="project-type">
+
+                            School Project
+
+                        </p>
+
+                        <p class="project-description">
+
+                            A visual campaign developed through composition,
+                            typography, and creative communication.
+
+                        </p>
+
+                        <p class="project-tools">
+
+                            CANVA / GRAPHIC DESIGN
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="archive-number">01</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- SCHOOL PROJECT 02 -->
+
+            <article class="archive-project" data-category="school">
+
+                <div class="archive-image">
+
+                    <img
+                        src="image/13.png"
+                        alt="Campaign poster design variation"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="archive-info">
+
+                    <div>
+
+                        <h3>Campaign Poster — Alternative</h3>
+
+                        <p class="project-type">
+
+                            School Project
+
+                        </p>
+
+                        <p class="project-description">
+
+                            An alternative visual direction exploring
+                            different layouts, colors, and graphic elements.
+
+                        </p>
+
+                        <p class="project-tools">
+
+                            CANVA / VISUAL COMMUNICATION
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="archive-number">02</span>
+
+                </div>
+
+            </article>
+
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         02 / PERSONAL PROJECTS
+    ======================================== -->
+
+
+    <section class="project-category" id="personal">
+
+        <div class="category-heading">
+
+            <div>
+
+                <div class="section-label">
+
+                    02 / INDEPENDENT CREATION
+
+                </div>
+
+
+                <h2>
+
+                    Personal <span>Projects.</span>
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                PERSONAL IDEAS / VISUAL ART<br>
+                EXPERIMENTAL WORK
+
+            </p>
+
+        </div>
+
+
+
+        <div class="project-grid">
+
+
+            <!-- PERSONAL PROJECT 01 -->
+
+            <article class="archive-project featured" data-category="personal">
+
+                <div class="archive-image">
+
+                    <img
+                        src="image/Hunt the witch Poster.png"
+                        alt="Hunt the Witch 3D artwork"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="archive-info">
+
+                    <div>
+
+                        <h3>Hunt the Witch</h3>
+
+                        <p class="project-type">
+
+                            Personal Project
+
+                        </p>
+
+                        <p class="project-description">
+
+                            A 3D visual artwork exploring atmosphere,
+                            digital environments, lighting, and visual storytelling.
+                            Created through a combination of 3D modeling and image editing.
+
+                        </p>
+
+                        <p class="project-tools">
+
+                            BLENDER / GIMP / 3D ART
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="archive-number">04</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PERSONAL PROJECT 02 -->
+
+            <article class="archive-project" data-category="personal">
+
+                <div class="archive-image">
+
+                    <img
+                        src="image/1.png"
+                        alt="Digital collage artwork"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="archive-info">
+
+                    <div>
+
+                        <h3>Digital Collage</h3>
+
+                        <p class="project-type">
+
+                            Personal Project
+
+                        </p>
+
+                        <p class="project-description">
+
+                            A visual composition combining different
+                            images, textures, and graphic elements.
+
+                        </p>
+
+                        <p class="project-tools">
+
+                            CANVA / DIGITAL ART
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="archive-number">05</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PERSONAL PROJECT 03 -->
+
+            <article class="archive-project" data-category="personal">
+
+                <div class="archive-image">
+
+                    <img
+                        src="image/AA8E2B6D-2D15-4D19-B945-30EDF42CE6FC.jpeg"
+                        alt="Digital collage made with GIMP"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="archive-info">
+
+                    <div>
+
+                        <h3>Visual Experiment</h3>
+
+                        <p class="project-type">
+
+                            Personal Project
+
+                        </p>
+
+                        <p class="project-description">
+
+                            Exploring image manipulation, visual composition,
+                            and creative storytelling through digital collage.
+
+                        </p>
+
+                        <p class="project-tools">
+
+                            GIMP / DIGITAL COMPOSITION
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="archive-number">06</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PERSONAL PROJECT 04 -->
+
+            <article class="archive-project" data-category="personal">
+
+                <div class="archive-image">
+
+                    <img
+                        src="image/2.png"
+                        alt="Minimalist digital collage"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="archive-info">
+
+                    <div>
+
+                        <h3>Minimalist Composition</h3>
+
+                        <p class="project-type">
+
+                            Personal Project
+
+                        </p>
+
+                        <p class="project-description">
+
+                            A minimalist exploration of shapes,
+                            visual balance, and composition.
+
+                        </p>
+
+                        <p class="project-tools">
+
+                            CANVA / GRAPHIC DESIGN
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="archive-number">07</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- PERSONAL PROJECT 05 -->
+
+            <article class="archive-project" data-category="personal">
+
+                <div class="archive-image">
+
+                    <img
+                        src="image/no i.png"
+                        alt="3D animation created with Blender"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="archive-info">
+
+                    <div>
+
+                        <h3>3D Animation</h3>
+
+                        <p class="project-type">
+
+                            School & Personal Project
+
+                        </p>
+
+                        <p class="project-description">
+
+                            An exploration of 3D space, lighting,
+                            movement, and digital storytelling.
+
+                        </p>
+
+                        <p class="project-tools">
+
+                            BLENDER / 3D ANIMATION
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="archive-number">03</span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         03 / PROFESSIONAL WORK
+    ======================================== -->
+
+
+    <section class="project-category" id="professional">
+
+        <div class="category-heading">
+
+            <div>
+
+                <div class="section-label">
+
+                    03 / PROFESSIONAL EXPERIENCE
+
+                </div>
+
+
+                <h2>
+
+                    Selected <span>Work.</span>
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                CLIENT WORK / DESIGN<br>
+                PROFESSIONAL PROJECTS
+
+            </p>
+
+        </div>
+
+
+
+        <div class="project-grid">
+
+
+            <!-- WORK PROJECT 01 -->
+
+            <article class="archive-project" data-category="work">
+
+                <div class="archive-image">
+
+                    <img
+                        src="image/carte-certificat-ENCHANTE_page-0001.jpg"
+                        alt="Gift card design for Ongles Enchantes"
+                        loading="lazy">
+
+                </div>
+
+
+                <div class="archive-info">
+
+                    <div>
+
+                        <h3>Gift Card Design</h3>
+
+                        <p class="project-type">
+
+                            Professional Project
+
+                        </p>
+
+                        <p class="project-description">
+
+                            A gift card design created for Ongles Enchantes,
+                            combining a clean layout with an elegant visual direction.
+
+                        </p>
+
+                        <p class="project-tools">
+
+                            CANVA / GIMP / GRAPHIC DESIGN
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="archive-number">08</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- WORK PROJECT 02 -->
+
+            <article class="archive-project" data-category="work">
+
+                <a
+                    href="https://www.onglesenchantes.com/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <div class="archive-image">
+
+                        <img
+                            src="image/Screenshot (1).png"
+                            alt="Ongles Enchantes website"
+                            loading="lazy">
+
+                    </div>
+
+                </a>
+
+
+                <div class="archive-info">
+
+                    <div>
+
+                        <h3>Ongles Enchantes Website</h3>
+
+                        <p class="project-type">
+
+                            Web Design / Development
+
+                        </p>
+
+                        <p class="project-description">
+
+                            Designed, developed, and maintained a website
+                            for a beauty salon, including a custom pricing
+                            calculation system and a dedicated product gallery.
+
+                        </p>
+
+                        <p class="project-tools">
+
+                            HTML / CSS / JAVASCRIPT
+
+                        </p>
+
+
+                        <a
+                            href="https://www.onglesenchantes.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link">
+
+                            VISIT WEBSITE ↗
+
+                        </a>
+
+                    </div>
+
+
+                    <span class="archive-number">09</span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BACK TO HOME -->
+
+    <section class="back-home">
+
+        <p>THANK YOU FOR EXPLORING</p>
+
+        <h2>
+
+            Let's create<br>
+
+            <span>something.</span>
+
+        </h2>
+
+
+        <a href="index.html">
+
+            BACK TO HOME
+
+            <span>↗</span>
+
+        </a>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <span>© 2026 DUY</span>
+
+        <span>INDEPENDENT ARTIST</span>
+
+        <span>MONTRÉAL, CANADA</span>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // PROJECT CATEGORY FILTER
+
+        const filterButtons = document.querySelectorAll(
+            ".project-filters button"
+        );
+
+        const projects = document.querySelectorAll(
+            ".archive-project"
+        );
+
+        const categories = document.querySelectorAll(
+            ".project-category"
+        );
+
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const selectedCategory = button.dataset.filter;
+
+
+                // Update active button
+
+                filterButtons.forEach(btn => {
+
+                    btn.classList.remove("active");
+
+                });
+
+                button.classList.add("active");
+
+
+                // Filter projects
+
+                projects.forEach(project => {
+
+                    const projectCategory = project.dataset.category;
+
+                    const shouldShow =
+                        selectedCategory === "all" ||
+                        selectedCategory === projectCategory;
+
+                    project.classList.toggle(
+                        "hidden",
+                        !shouldShow
+                    );
+
+                });
+
+
+                // Hide categories without visible projects
+
+                categories.forEach(category => {
+
+                    const visibleProjects = category.querySelectorAll(
+                        ".archive-project:not(.hidden)"
+                    );
+
+                    category.style.display =
+                        visibleProjects.length > 0 ? "" : "none";
+
+                });
+
+            });
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
